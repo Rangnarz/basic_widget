@@ -13,20 +13,33 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Basic Widget'),
+          backgroundColor: const Color.fromARGB(255, 142, 198, 244),
         ),
       
-        body: const Center(
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [ 
-              Image(
-                image: AssetImage('assets/images/ass1.gif'),
-              ),
-              SizedBox(height: 20),
-              Text('Hello World!'),
+                     Image.asset(
+                       'assets/images/ass1.gif',
+                       width: 220,
+                       height: 220,
+                       fit: BoxFit.contain,
+                     ),
+                     const SizedBox(height: 20),
+              const Text('Hello World!'),
             ],
           ),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('FAB pressed')),
+            );
+          },
+          child: const Text("Click me"),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       ),
     );
   }
