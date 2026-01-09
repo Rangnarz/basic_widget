@@ -19,6 +19,10 @@ class MainApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [ 
+              Image(
+                image: AssetImage('assets/images/ass1.gif'),
+              ),
+              SizedBox(height: 20),
               Text('Hello World!'),
             ],
           ),
